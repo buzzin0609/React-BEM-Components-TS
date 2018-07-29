@@ -2,9 +2,10 @@
   "name": "react-bem-components",
   "version": "0.0.1",
   "description": "Simple React components with built in BEM css class naming conventions",
-  "main": "react-bem-components.js",
+  "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build react-bem-components.js -d . --out-file index.js --no-source-maps"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -23,9 +24,11 @@
   "license": "ISC",
   "devDependencies": {
     "babel-jest": "^23.4.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "jest": "^23.4.2",
+    "parcel-bundler": "^1.9.7",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",

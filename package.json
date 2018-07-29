@@ -1,6 +1,6 @@
 {
   "name": "react-bem-components",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Simple React components with built in BEM css class naming conventions",
   "main": "react-bem-components.js",
   "scripts": {

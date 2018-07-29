@@ -1,0 +1,36 @@
+{
+  "name": "react-bem-components",
+  "version": "0.0.1",
+  "description": "Simple React components with built in BEM css class naming conventions",
+  "main": "react-bem-components.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js"
+    ],
+    "testMatch": [
+      "<rootDir>/components/**/*.spec.js?(x)"
+    ],
+    "testURL": "http://localhost"
+  },
+  "author": "Will Busby <will0609@hotmail.com>",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/buzzin0609/React-BEM-Components.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "babel-jest": "^23.4.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^23.4.2",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-test-renderer": "^16.4.1",
+    "react-testing-library": "^4.1.5"
+  },
+  "dependencies": {}
+}

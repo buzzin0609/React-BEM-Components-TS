@@ -7,7 +7,7 @@ describe('Wrapper', () => {
     
     it('should use the wrapper element prop in the className', function() {
         const component = renderer.create(
-            <Wrapper></Wrapper>
+            <Wrapper />
         );
 
         const instance = component.toJSON();

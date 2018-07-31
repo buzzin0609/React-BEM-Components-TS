@@ -11,6 +11,7 @@ React BEM comes with multiple built in components
 - Text
 - Button
 - Link
+- Image
 
 ## Usage
 
@@ -19,7 +20,7 @@ Each component has named props to aid in building your desired BEM structure
 ```javascript
 
 import React, { Component } from 'react'
-import { Wrapper, Title, Text, Button } from 'react-bem';
+import { Wrapper, Title, Text, Button } from 'react-bem-components';
 
 class MyBEMComponent extends Component {
 

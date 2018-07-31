@@ -41,16 +41,17 @@ export default class BaseComponent extends PureComponent {
         return `${block ? `${block}__${element}` : ''} ${element} ${[modifier, ...modifiers].map(modifier => `${element}--${modifier}`).join(' ')} ${extraClasses}`.trim();
     }
 
+    get attributes() {
+		return Object.keys(this.props.attributes)
+			.reduce(
+				(acc, attr) => ({
+					...acc,
+					[`data-${attr}`.replace('data-data-', 'data-')]: this.props.attributes[attr]
+				}), {}
+			);
+    }
+
     render() {
-
-        const attributes = Object.keys(this.props.attributes)
-            .reduce(
-                (acc, attr) => ({
-                    ...acc,
-                    [`data-${attr}`.replace('data-data-', 'data-')]: this.props.attributes[attr]
-                }), {}
-            );
-
         return (
             <BaseElement 
                 tag={this.props.tag}
@@ -62,7 +63,7 @@ export default class BaseComponent extends PureComponent {
                         [prop]: this.props[prop]
                     }), {}
                 )}
-                {...attributes}
+                {...this.attributes}
             >
                 {this.props.children}
             </BaseElement>

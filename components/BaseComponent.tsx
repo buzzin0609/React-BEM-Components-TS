@@ -23,7 +23,7 @@ const defaultProps = {
 };
 
 const safeProps = [
-    'src', 'alt', 'onClick', 'onBlur', 'onSubmit'
+    'src', 'alt', 'onClick', 'onBlur', 'onSubmit', 'style'
 ];
 
 export default class BaseComponent extends PureComponent {

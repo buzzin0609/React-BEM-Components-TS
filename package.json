@@ -1,7 +1,7 @@
 {
-  "name": "react-bem-components",
-  "version": "0.0.6",
-  "description": "Simple React components with built in BEM css class naming conventions",
+  "name": "react-bem-components-ts",
+  "version": "0.0.1",
+  "description": "Simple React components with built in BEM css class naming conventions, now in Typescript",
   "main": "react-bem-components.js",
   "scripts": {
     "test": "jest"
@@ -31,7 +31,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1",
-    "react-testing-library": "^4.1.5"
+    "react-testing-library": "^4.1.5",
+    "typings": "^2.1.1"
   },
   "dependencies": {}
 }

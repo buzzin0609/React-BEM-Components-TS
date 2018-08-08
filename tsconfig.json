@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "es5",
-    "module": "commonjs",
+    "module": "es6",
+    "lib": ["es2015"],
     "moduleResolution": "node",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false
-  }
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

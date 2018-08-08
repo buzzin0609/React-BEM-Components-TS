@@ -19,7 +19,7 @@ export default class Picture extends BaseComponent {
 			<picture className={this.className} {...this.attributes}>
 				{
 					this.props.sources.map(
-						source => <source key={source.src} media={source.media} srcSet={source.src} />
+						(source: any) => <source key={source.src} media={source.media} srcSet={source.src} />
 					)
 				}
 				<img src={this.props.src} alt={this.props.alt} />

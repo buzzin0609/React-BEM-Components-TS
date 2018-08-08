@@ -56,11 +56,12 @@ export default class BaseComponent extends PureComponent {
 
     render() {
         return (
+            // @ts-ignore
             <BaseElement
                 // @ts-ignore
                 tag={this.props.tag}
-                id={this.props.id} 
-                className={this.className} 
+                id={this.props.id}
+                className={this.className}
                 {...safeProps.reduce(
                     (acc, prop) => ({
                         ...acc,
@@ -79,8 +80,9 @@ export default class BaseComponent extends PureComponent {
  BaseComponent.propTypes = propTypes;
  BaseComponent.defaultProps = defaultProps;
 
- export function withBaseProps(newProps, propType = 'defaultProps') {
+ export function withBaseProps(newProps: any, propType = 'defaultProps'): any {
      return {
+        // @ts-ignore
          ...BaseComponent[propType],
          ...newProps
      };

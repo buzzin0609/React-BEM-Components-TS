@@ -27,6 +27,9 @@ const safeProps = [
 ];
 
 export default class BaseComponent extends PureComponent {
+    props: any;
+    static propTypes: { tag: any; block: any; element: any; modifier: any; modifiers: any; extraClasses: any; id: any; attributes: any; };
+    static defaultProps: { tag: string; block: string; modifier: string; modifiers: any[]; extraClasses: string; attributes: {}; };
 
     get className() {
 
@@ -53,7 +56,8 @@ export default class BaseComponent extends PureComponent {
 
     render() {
         return (
-            <BaseElement 
+            <BaseElement
+                // @ts-ignore
                 tag={this.props.tag}
                 id={this.props.id} 
                 className={this.className} 

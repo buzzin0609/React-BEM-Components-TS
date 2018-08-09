@@ -3,6 +3,10 @@ import {baseDefaultProps, BaseProps} from "./BaseProps";
 
 export default class BaseElement extends PureComponent<BaseProps> {
     render() {
-        return React.createElement(this.props.tag || baseDefaultProps.tag, this.props, this.props.children);
+        const {
+            tag,
+            ...props
+        } = this.props;
+        return React.createElement(tag || baseDefaultProps.tag, props, this.props.children);
     }
 }

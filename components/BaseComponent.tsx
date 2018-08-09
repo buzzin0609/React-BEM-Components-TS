@@ -52,11 +52,3 @@ export default class BaseComponent extends PureComponent<BaseProps> {
     }
 
 }
-
- export function withBaseProps(newProps: any, propType = 'defaultProps'): any {
-     return {
-        // @ts-ignore
-         ...BaseComponent[propType],
-         ...newProps
-     };
- }

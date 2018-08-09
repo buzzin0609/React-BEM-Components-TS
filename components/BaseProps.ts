@@ -12,6 +12,7 @@ export interface BaseProps {
     alt?: string;
     href?: string;
     sources?: any;
+    style?: any;
 }
 
 export const baseDefaultProps = {

@@ -5,7 +5,7 @@ export interface BaseProps {
     [index: string]: any;
     tag?: string;
     block?: string;
-    element: string;
+    element?: string;
     modifier?: string;
     modifiers?: string[];
     extraClasses?: string;
@@ -14,7 +14,7 @@ export interface BaseProps {
     src?: string;
     alt?: string;
     href?: string;
-    sources?: string[];
+    sources?: any;
 }
 
 const defaultProps = {
@@ -58,9 +58,7 @@ export default class BaseComponent extends PureComponent<BaseProps> {
 
     render() {
         return (
-            // @ts-ignore
             <BaseElement
-                // @ts-ignore
                 tag={this.props.tag}
                 id={this.props.id}
                 className={this.className}

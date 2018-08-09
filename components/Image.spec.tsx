@@ -8,7 +8,8 @@ describe('Image:', function () {
 			<Image src={'foo.jpg'} />
 		);
 
-		expect(component.container.firstChild.src).toEqual(
+		// @ts-ignore
+        expect(component.container.firstChild.src).toEqual(
 			expect.stringContaining('foo.jpg')
 		);
 	});

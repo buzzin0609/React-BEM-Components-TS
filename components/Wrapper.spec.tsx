@@ -12,7 +12,7 @@ describe('Wrapper', () => {
 
         const instance = component.toJSON();
 
-        expect(instance.props.className).toEqual('wrapper wrapper--default');
+        expect(instance && instance.props.className).toEqual('wrapper wrapper--default');
     });
 
 });

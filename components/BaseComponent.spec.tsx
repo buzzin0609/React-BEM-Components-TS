@@ -9,8 +9,8 @@ describe('BaseComponent', function() {
         );
         const instance = component.toJSON();
         expect(component.toTree()).toBeTruthy();
-        expect(instance.type).toEqual('div');
-        expect(instance.props.className).toEqual('test test--default');
+        expect(instance && instance.type).toEqual('div');
+        expect(instance && instance.props.className).toEqual('test test--default');
     });
 
     it('should correctly render all the correct BEM classes', function() {
@@ -26,7 +26,7 @@ describe('BaseComponent', function() {
         );
 
         const instance = component.toJSON();
-        expect(instance.props.className).toEqual('test-block__item item item--main item--second item--third extra1 extra2');
+        expect(instance && instance.props.className).toEqual('test-block__item item item--main item--second item--third extra1 extra2');
     });
 
     it('should add attributes', function() {
@@ -42,7 +42,7 @@ describe('BaseComponent', function() {
         );
 
         const instance = component.toJSON();
-        expect(instance.props).toEqual(
+        expect(instance && instance.props).toEqual(
             expect.objectContaining({
                 'data-foo': 'bar',
                 'data-bizz': 'fuzz',
@@ -61,6 +61,6 @@ describe('BaseComponent', function() {
         );
 
         const instance = component.toJSON();
-        expect(instance.children[0].type).toEqual('p');
+        expect(instance && instance.children && instance.children[0].type).toEqual('p');
     });
 });

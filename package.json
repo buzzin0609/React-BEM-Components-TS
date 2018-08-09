@@ -1,6 +1,6 @@
 {
   "name": "react-bem-components-ts",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Simple React components with built in BEM css class naming conventions, now in Typescript",
   "main": "dist/react-bem-copmponents.js",
   "types": "dist/react-bem-components.d.ts",
@@ -24,7 +24,9 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^23.3.1",
     "@types/react": "^16.4.8",
+    "@types/react-test-renderer": "^16.0.2",
     "babel-jest": "^23.4.2",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",

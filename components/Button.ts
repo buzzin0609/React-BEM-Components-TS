@@ -6,7 +6,6 @@ const defaultProps = {
 };
 
 export default class Button extends BaseComponent {
-    static defaultProps: any;
+    static defaultProps = withBaseProps(defaultProps);
 }
 
- Button.defaultProps = withBaseProps(defaultProps);

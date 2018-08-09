@@ -6,6 +6,5 @@ const defaultProps = {
 };
 
 export default class Title extends BaseComponent {
+    static defaultProps = withBaseProps(defaultProps);
 }
-
-Title.defaultProps = withBaseProps(defaultProps);

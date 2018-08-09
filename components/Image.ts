@@ -1,10 +1,4 @@
-import PropTypes from 'prop-types';
 import BaseComponent, {withBaseProps} from "./BaseComponent";
-
-const propTypes = {
-	src: PropTypes.string,
-	alt: PropTypes.string
-};
 
 const defaultProps = {
 	tag: 'img',
@@ -12,8 +6,6 @@ const defaultProps = {
 };
 
 export default class Image extends BaseComponent {
+	static defaultProps = withBaseProps(defaultProps);
 }
-
-Image.propTypes = withBaseProps(propTypes, 'propTypes');
-Image.defaultProps = withBaseProps(defaultProps);
 

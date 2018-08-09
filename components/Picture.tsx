@@ -1,12 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BaseComponent, {withBaseProps} from "./BaseComponent";
-
-const propTypes = {
-	sources: PropTypes.arrayOf(PropTypes.object),
-	src: PropTypes.string,
-	alt: PropTypes.string
-};
 
 const defaultProps = {
 	element: 'picture',
@@ -14,20 +7,18 @@ const defaultProps = {
 };
 
 export default class Picture extends BaseComponent {
+	static defaultProps = withBaseProps(defaultProps);
+
 	render() {
 		return (
 			<picture className={this.className} {...this.attributes}>
 				{
-					this.props.sources.map(
+					this.props.sources && this.props.sources.map(
 						(source: any) => <source key={source.src} media={source.media} srcSet={source.src} />
-					)
+					) || React.Fragment
 				}
 				<img src={this.props.src} alt={this.props.alt} />
 			</picture>
 		);
 	}
 }
-
-Picture.propTypes = withBaseProps(propTypes, 'propTypes');
-Picture.defaultProps = withBaseProps(defaultProps);
-

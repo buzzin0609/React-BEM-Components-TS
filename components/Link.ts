@@ -1,9 +1,4 @@
-import PropTypes from 'prop-types';
 import BaseComponent, { withBaseProps } from './BaseComponent';
-
-const propTypes = {
-    href: PropTypes.string.isRequired
-};
 
 const defaultProps = {
     tag: 'a',
@@ -11,7 +6,5 @@ const defaultProps = {
 };
 
 export default class Link extends BaseComponent {
-}
-
- Link.propTypes = withBaseProps(propTypes, 'propTypes');
- Link.defaultProps = withBaseProps(defaultProps);
+    static defaultProps = withBaseProps(defaultProps);
+};

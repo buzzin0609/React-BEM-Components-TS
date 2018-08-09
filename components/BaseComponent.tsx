@@ -1,17 +1,21 @@
 import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import BaseElement from './BaseElement';
 
-const propTypes = {
-    tag: PropTypes.string,
-    block: PropTypes.string,
-    element: PropTypes.string.isRequired,
-    modifier: PropTypes.string,
-    modifiers: PropTypes.arrayOf(PropTypes.string),
-    extraClasses: PropTypes.string,
-    id: PropTypes.string,
-    attributes: PropTypes.object
-};
+export interface BaseProps {
+    [index: string]: any;
+    tag?: string;
+    block?: string;
+    element: string;
+    modifier?: string;
+    modifiers?: string[];
+    extraClasses?: string;
+    id?: string;
+    attributes?: any;
+    src?: string;
+    alt?: string;
+    href?: string;
+    sources?: string[];
+}
 
 const defaultProps = {
     tag: 'div',
@@ -26,10 +30,8 @@ const safeProps = [
     'src', 'alt', 'onClick', 'onBlur', 'onSubmit'
 ];
 
-export default class BaseComponent extends PureComponent {
-    props: any;
-    static propTypes: { tag: any; block: any; element: any; modifier: any; modifiers: any; extraClasses: any; id: any; attributes: any; };
-    static defaultProps: { tag: string; block: string; modifier: string; modifiers: any[]; extraClasses: string; attributes: {}; };
+export default class BaseComponent extends PureComponent<BaseProps> {
+    static defaultProps = defaultProps;
 
     get className() {
 
@@ -47,7 +49,7 @@ export default class BaseComponent extends PureComponent {
     get attributes() {
 		return Object.keys(this.props.attributes)
 			.reduce(
-				(acc, attr) => ({
+				(acc, attr: string) => ({
 					...acc,
 					[`data-${attr}`.replace('data-data-', 'data-')]: this.props.attributes[attr]
 				}), {}
@@ -76,9 +78,6 @@ export default class BaseComponent extends PureComponent {
     }
 
 }
-
- BaseComponent.propTypes = propTypes;
- BaseComponent.defaultProps = defaultProps;
 
  export function withBaseProps(newProps: any, propType = 'defaultProps'): any {
      return {

@@ -5,6 +5,5 @@ const defaultProps = {
 };
 
 export default class Wrapper extends BaseComponent {
+    static defaultProps = withBaseProps(defaultProps);
 }
-
-Wrapper.defaultProps = withBaseProps(defaultProps);

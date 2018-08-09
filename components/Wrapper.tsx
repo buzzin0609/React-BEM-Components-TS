@@ -1,6 +1,6 @@
 import BaseComponent from './BaseComponent';
-import {BaseProps} from "./BaseComponent";
 import * as React from "react";
+import {BaseProps} from "./BaseProps";
 
 const defaultProps = {
     element: 'wrapper'

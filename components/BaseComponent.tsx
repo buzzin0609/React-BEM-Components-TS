@@ -1,37 +1,13 @@
 import React, { PureComponent } from 'react';
 import BaseElement from './BaseElement';
-
-export interface BaseProps {
-    [index: string]: any;
-    tag?: string;
-    block?: string;
-    element?: string;
-    modifier?: string;
-    modifiers?: string[];
-    extraClasses?: string;
-    id?: string;
-    attributes?: any;
-    src?: string;
-    alt?: string;
-    href?: string;
-    sources?: any;
-}
-
-const defaultProps = {
-    tag: 'div',
-    block: '',
-    modifier: 'default',
-    modifiers: [],
-    extraClasses: '',
-    attributes: {}
-};
+import {baseDefaultProps, BaseProps} from "./BaseProps";
 
 const safeProps = [
     'src', 'alt', 'onClick', 'onBlur', 'onSubmit'
 ];
 
 export default class BaseComponent extends PureComponent<BaseProps> {
-    static defaultProps = defaultProps;
+    static defaultProps = baseDefaultProps;
 
     get className() {
 

@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-import BaseComponent, {BaseProps} from "./BaseComponent";
+import {baseDefaultProps, BaseProps} from "./BaseProps";
 
 export default class BaseElement extends PureComponent<BaseProps> {
-    static defaultProps = BaseComponent.defaultProps;
+    static defaultProps = baseDefaultProps;
 
     render() {
-        return React.createElement(this.props.tag || BaseComponent.defaultProps.tag, this.props, this.props.children);
+        return React.createElement(this.props.tag || baseDefaultProps.tag, this.props, this.props.children);
     }
 }

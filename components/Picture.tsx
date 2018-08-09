@@ -1,5 +1,6 @@
 import React from 'react';
-import BaseComponent, {BaseProps} from "./BaseComponent";
+import BaseComponent from "./BaseComponent";
+import {BaseProps} from "./BaseProps";
 
 const defaultProps = {
 	element: 'picture',

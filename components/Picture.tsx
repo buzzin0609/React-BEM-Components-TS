@@ -1,33 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import BaseComponent, {withBaseProps} from "./BaseComponent";
-
-const propTypes = {
-	sources: PropTypes.arrayOf(PropTypes.object),
-	src: PropTypes.string,
-	alt: PropTypes.string
-};
+import BaseComponent from "./BaseComponent";
+import {BaseProps} from "./BaseProps";
 
 const defaultProps = {
 	element: 'picture',
 	sources: []
 };
 
-export default class Picture extends BaseComponent {
-	render() {
-		return (
-			<picture className={this.className} {...this.attributes}>
-				{
-					this.props.sources.map(
-						(source: any) => <source key={source.src} media={source.media} srcSet={source.src} />
-					)
-				}
-				<img src={this.props.src} alt={this.props.alt} />
-			</picture>
-		);
-	}
-}
-
-Picture.propTypes = withBaseProps(propTypes, 'propTypes');
-Picture.defaultProps = withBaseProps(defaultProps);
-
+export default function Picture(props: BaseProps) {
+	return (
+		<BaseComponent {...defaultProps} {...props}>
+            {
+                props.sources && props.sources.map(
+                    (source: any) => <source key={source.src} media={source.media} srcSet={source.src} />
+                ) || React.Fragment
+            }
+            <img src={props.src} alt={props.alt} />
+		</BaseComponent>
+	)
+};

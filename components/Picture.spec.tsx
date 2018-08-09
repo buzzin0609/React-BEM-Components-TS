@@ -21,6 +21,7 @@ describe('Picture:', function () {
 			]} />
 		);
 
-		expect(component.container.querySelectorAll('source').length).toEqual(2);
+		// @ts-ignore
+        expect(component.container.querySelectorAll('source').length).toEqual(2);
 	});
 });

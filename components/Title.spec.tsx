@@ -11,7 +11,7 @@ describe('Title', () => {
 
         const instance = component.toJSON();
 
-        expect(instance.type).toEqual('h2');
+        expect(instance && instance.type).toEqual('h2');
     });
 
 });
